@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/bottomlayout">
+
+        <ListView
+            android:id="@+id/textlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <!--聊天的模式-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.chatrobot01.FlowRadioGroup
+                android:id="@+id/radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="聊天"
+                    android:textColor="#000000"/>
+
+                <RadioButton
+                    android:id="@+id/translate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="翻译"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/joke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查天气"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/lyric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="找歌词"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="计算"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/ip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查IP"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查手机号"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/idiom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="成语查询"
+                    android:textColor="#000000" />
+
+            </com.example.chatrobot01.FlowRadioGroup>
+
+        </LinearLayout>
+
+        <!--最底部的输入框和发送按钮-->
+        <!--GridLayout失败-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/send"
+                android:textSize="20dp"
+                android:inputType="textMultiLine"
+                android:textColor="#000000"/>
+
+            <Button
+                android:id="@+id/send"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:onClick="getData"
+                android:textSize="20dp"
+                android:text="发送"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+    <!--
+                1.采用linearlayout布局：
+                android:layout_height="0dp"  这里不能设置fill_parent
+                android:layout_weight="1"  这里设置layout_weight=1是最关键的，否则底部的LinearLayout无法到底部
+                2. 采用relativelayout布局：
+                android:layout_alignParentBottom="true"  这里设置layout_alignParentBottom=true是最关键的，这个属性上级必须是RelativeLayout
+                -->

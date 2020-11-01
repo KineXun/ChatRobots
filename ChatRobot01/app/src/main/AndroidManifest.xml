@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chatrobot01">
+
+    <!--请求网络权限-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <!--android:theme="@style/Theme.AppCompat.NoActionBar"去除标题栏-->
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <!--android:windowSoftInputMode="stateHidden|adjustResize" 设置整体布局不会随着键盘的出现而上移
+                android:configChanges="orientation|keyboardHidden|screenSize"设置横屏与竖屏切换时不会销毁重新创建Activity-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" /><!--自带控件所需的权限-->
+    </application>
+
+</manifest>
