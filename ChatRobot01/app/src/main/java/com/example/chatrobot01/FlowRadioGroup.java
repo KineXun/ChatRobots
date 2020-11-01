@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.RadioGroup;
 
 //上网找的代码，继承radiogroup，实现自动换行
-//https://blog.csdn.net/zhesir/article/details/50203083?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-2-50203083.nonecase&utm_term=radio%20%E5%86%85%E5%AE%B9%20%E6%8D%A2%E8%A1%8C&spm=1000.2123.3001.4430
+//https://blog.csdn.net/zhesir/article/details/50203083
 public class FlowRadioGroup extends RadioGroup {
     public FlowRadioGroup(Context context) {
         super(context);
